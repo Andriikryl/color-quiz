@@ -57,8 +57,8 @@
 }
 
 .container{
-  width: 310px;
-  height: 310px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -69,4 +69,23 @@
 .btn-box{
   display: flex;
   gap: 10px;
+}
+
+.answer-text{
+  color: tomato;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.answer-box{
+  min-height: 40px;
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 10px;
+  min-width: 200px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }

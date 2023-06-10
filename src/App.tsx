@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [color, setColor] = useState("");
   const [answers, setAnswers] = useState<string[]>([]);
+  const [isWrongSelection, setIsWrongSelection] = useState(false);
 
   const getRandomColor = () => {
     const digits = [
@@ -41,13 +42,26 @@ function App() {
     );
   }, []);
 
+  function handleAnswerClicked(answer: string) {
+    if (answer === color) {
+      setIsWrongSelection(false);
+    } else {
+      setIsWrongSelection(true);
+    }
+  }
+
   return (
     <div className="App">
+      <div className="answer-box">
+        {isWrongSelection && <span className="answer-text">Wrong Answer</span>}
+      </div>
       <div className="container" style={{ background: color }}></div>
       <div className="btn-box">
         {answers.map((answer) => (
           <>
-            <button>{answer}</button>
+            <button onClick={() => handleAnswerClicked(answer)}>
+              {answer}
+            </button>
           </>
         ))}
       </div>
