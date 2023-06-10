@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [color, setColor] = useState("");
+  const [answers, setAnswers] = useState<string[]>([]);
 
   const getRandomColor = () => {
     const digits = [
@@ -31,12 +32,25 @@ function App() {
   };
 
   useEffect(() => {
-    setColor(getRandomColor());
+    const actualColor = getRandomColor();
+    setColor(actualColor);
+    setAnswers(
+      [actualColor, getRandomColor(), getRandomColor()].sort(
+        () => 0.5 - Math.random()
+      )
+    );
   }, []);
 
   return (
     <div className="App">
       <div className="container" style={{ background: color }}></div>
+      <div className="btn-box">
+        {answers.map((answer) => (
+          <>
+            <button>{answer}</button>
+          </>
+        ))}
+      </div>
     </div>
   );
 }

@@ -11,6 +11,21 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
+.App{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 40px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -42,6 +57,16 @@
 }
 
 .container{
-  width: 200px;
-  height: 200px;
+  width: 310px;
+  height: 310px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.btn-box{
+  display: flex;
+  gap: 10px;
 }
